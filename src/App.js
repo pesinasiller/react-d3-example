@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import PercentRing from './PercentRing'
+import './App.scss';
+import {graphData, data} from './data'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component{
+
+    render(){
+        const rings = data.map( (ring,index) => {
+            return <PercentRing
+                    ringData={ring}
+                    graphData={graphData}
+                    key={index} />
+        });
+        
+        return (
+            <div className="App">
+              {rings}
+            </div>
+          );
+    }
+  
 }
 
 export default App;
