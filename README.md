@@ -2,5 +2,5 @@
 ## React.js + D3.js example
 
 - npm install
-- npm run 
+- npm start 
 - open http://localhost:3000/
